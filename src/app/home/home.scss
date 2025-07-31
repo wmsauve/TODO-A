@@ -1,0 +1,20 @@
+//Hardcode for the sake of this app. Probably terrible way to do it.
+$max-rows: 1;
+$max-cols: 3;
+
+.homeGrid {
+    display: grid;
+    padding: 5px;
+    gap: 10px;
+    grid-template-columns: repeat($max-cols, 1fr);
+    grid-auto-rows: auto;
+
+    @for $row from 1 through $max-rows {
+        @for $col from 1 through $max-cols {
+                .grid-pos-#{$row}-#{$col} {
+                grid-row: $row;
+                grid-column: $col;
+                }
+            }
+    }
+}

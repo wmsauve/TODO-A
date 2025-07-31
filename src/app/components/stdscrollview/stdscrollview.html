@@ -1,0 +1,5 @@
+<div class="scroll-column-flex">
+    @for (item of getListItemValues(); track $index) {
+        <app-itemcomp [data]="item" />
+    }
+</div>
