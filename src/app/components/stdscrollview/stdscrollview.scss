@@ -1,9 +1,5 @@
 .scroll-column-flex{
-    width: 300px;
-    height: 150px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    border-style: solid;
-    border-width: 1px;
 }

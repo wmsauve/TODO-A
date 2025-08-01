@@ -1,4 +1,6 @@
 <div class="homeGrid">
     <app-stdscrollview class="grid-pos-1-1" [listItemDictionary]="listItemDictionary()"></app-stdscrollview>
-    <app-additemform class="grid-pos-1-2" (addPressed)="onAddItemPressed($event)"></app-additemform>
+    <app-additemform class="grid-pos-1-2"></app-additemform> 
+    <app-tooltip class="grid-pos-1-3" [selectedItem]="currentSelectedItem()"></app-tooltip>
 </div>
+<!-- (addPressed)="onAddItemPressed($event) -->

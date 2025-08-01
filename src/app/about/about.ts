@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './about.scss'
 })
 export class About {
-
+  message = signal("Why did you even click here? How foolish of you.");
 }

@@ -1,6 +1,9 @@
-<li class="removeBulletPoint">
-    <input type="checkbox" id="listitem" />
+<li appItemlistmodified [isCompleted]="data().IsCompleted" class="removeBulletPoint">
+    <input type="checkbox" [checked]="data().IsCompleted" (change)="attemptToggleCompleted($event)" id="listitem" />
     <label for="listitem">{{ data().Label }}</label>
     <app-stdbutton [label]="`View Info`" [action]="showInfoPanel"></app-stdbutton>
-    <!-- <app-stdbutton [label]="`Delete Item" [action]="del" -->
+    <app-stdbutton [label]="`Delete Item`" [action]="deleteThisItem"></app-stdbutton>
+@if (attemptedToggle) {
+    <app-stdbutton [label]="`Save Change`" [action]="changeCompleteStatus"></app-stdbutton>        
+}
 </li>

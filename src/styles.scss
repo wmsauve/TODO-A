@@ -13,3 +13,14 @@ html, body {
 .removeBulletPoint {
     list-style-type: none;
 }
+
+.homeSubComp {
+    width: 300px;
+    height: 150px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.makeMouseOverPointer {
+    cursor: pointer;
+}

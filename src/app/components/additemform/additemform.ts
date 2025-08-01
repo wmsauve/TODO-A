@@ -1,7 +1,8 @@
-import { Component, output  } from '@angular/core';
+import { Component, inject  } from '@angular/core';
 import { Stdbutton } from '../stdbutton/stdbutton';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ListItem } from '../../../model/defs.type';
+import { GlobalEmitType, ListItem } from '../../../model/defs.type';
+import { Emithandlerservice } from '../../services/emithandlerservice';
 
 @Component({
   selector: 'app-additemform',
@@ -10,8 +11,8 @@ import { ListItem } from '../../../model/defs.type';
   styleUrl: './additemform.scss'
 })
 export class Additemform {
-  addPressed = output<ListItem>();
-
+  globalEmitter = inject(Emithandlerservice);
+  
   itemForm = new FormGroup({
     label: new FormControl('', [Validators.required, Validators.maxLength(30)]),
     description: new FormControl('', [Validators.required, Validators.maxLength(200)]),
@@ -41,6 +42,6 @@ export class Additemform {
       IsCompleted: false,
     }; 
 
-    this.addPressed.emit(newItem);
+    this.globalEmitter.sendData(newItem, GlobalEmitType.AddItem);
   }
 }
