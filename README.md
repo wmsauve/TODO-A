@@ -3,6 +3,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 ## Quick Test
 - Have the TODO-S .exe running on your machine.
 - Add environment variables in the src/environments folder.
+- npm install
 
 environment.development.ts
 ```bash
