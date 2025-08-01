@@ -28,19 +28,23 @@ export class Additemform {
         alert("Empty values for either label or due date. Please enter something.");
         return;
     }
-    
-    if(vals.description == null || vals.description == undefined){
-       vals.description = '';
+
+    //LOL, this ain't it. Needs refactor to handle empty values more generally.
+    let handleDescription = vals.description;
+    if(handleDescription == null || handleDescription == undefined || handleDescription === '') {
+      handleDescription = " ";
     }
 
     //DateTime time.
     let formattedTime = new Date(vals.dueDate).toISOString().split(`.`)[0];
     let newItem : ListItem = {
       Label: vals.label,
-      Description: vals.description,
+      Description: handleDescription,
       DueDate: formattedTime,
       IsCompleted: false,
     }; 
+
+    console.log(newItem);
 
     this.globalEmitter.sendData(newItem, GlobalEmitType.AddItem);
   }

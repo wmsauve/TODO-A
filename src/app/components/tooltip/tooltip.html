@@ -2,7 +2,7 @@
     <ul class="tooltipPoints removeBulletPoint">
         <li>Label: {{ selectedItem()?.Label }}</li>
         <li>Description: {{ selectedItem()?.Description }}</li>
-        <li>DueDate: {{ selectedItem()?.DueDate }}</li>
-        <li>Completed: {{ selectedItem()?.DueDate | date:"shortDate"}}</li>
+        <li>DueDate: {{ selectedItem()?.DueDate | date:"shortDate" }}</li>
+        <li>Completed: {{ selectedItem()?.IsCompleted }}</li>
     </ul>
 </div>
